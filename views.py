@@ -89,7 +89,6 @@ class StudentAbsenceFilter(BaseFilters):
 
 class StudentAbsenceViewSet(BaseModelViewSet):
     queryset = StudentAbsenceModel.objects.filter(student__isnull=False)
-    filter_access = True
 
     serializer_class = StudentAbsenceSerializer
     permission_classes = (IsAuthenticated, DjangoModelPermissions,)
